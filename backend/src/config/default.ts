@@ -5,12 +5,12 @@ config()
 
 export const PORT: string | number = process.env.PORT || 5173
 export const corsOption: CorsOptions = {
-    origin: "*",
+    origin: [process.env.VITE_OPS_URL!],
     credentials: true,
 }
 
 export const socketServerOption: Partial<ServerOptions> = {
     cors: {
-        origin: "*"
+        origin: process.env.VITE_OPS_URL
     },
 }
