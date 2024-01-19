@@ -1,0 +1,9 @@
+[build]
+    functions = "backend/src"
+
+[[redirects]]
+    from="/*"
+    to="/backend/.netlify/functions/server/:splat"
+    status=200
+
+

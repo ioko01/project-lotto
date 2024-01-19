@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import { ServerOptions } from "socket.io";
 config()
 
-export const PORT: string | number = process.env.PORT || 8888
+export const PORT: string | number = process.env.PORT || 5173
 export const corsOption: CorsOptions = {
     origin: [process.env.VITE_OPS_URL!],
     credentials: true,
