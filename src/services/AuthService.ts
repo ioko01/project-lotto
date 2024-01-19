@@ -18,7 +18,7 @@ export interface UserCredentials {
 export class AuthService {
     static async login(credentials: UserCredentials): Promise<AuthResponse> {
         const response = await axios.post<AuthResponse>(
-            `${API_URL}/auth/login`,
+            `${API_URL}auth/login`,
             credentials
         );
         return response.data;
@@ -26,7 +26,7 @@ export class AuthService {
 
     static async logout(username: string, token: string): Promise<{ username: string }> {
         const axiosConfig: AxiosRequestConfig = { withCredentials: true, timeout: 10000, headers: { Authorization: `Bearer ${token}` } }
-        const response = await axios.post(`${API_URL}/auth/logout`, { username: username }, axiosConfig)
+        const response = await axios.post(`${API_URL}auth/logout`, { username: username }, axiosConfig)
 
         return response.data;
     }
